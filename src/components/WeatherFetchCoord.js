@@ -1,6 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import WeatherDisplay from './WeatherDisplay';
+import Image from './Image';
 
 const WeatherApi = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
 
@@ -23,6 +24,7 @@ const WeatherFetchCoord = (props) => {
     return (
         <div>
             <WeatherDisplay weatherData={weatherData} />
+            <Image city={weatherData && weatherData.name} />
         </div>
     )
 };

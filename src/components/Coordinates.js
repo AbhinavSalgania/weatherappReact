@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import WeatherFetchCoord from './WeatherFetchCoord';
+import Time from './Time';
 
 const Coordinates = () => {
     const [coordinates, setCoordinates] = useState(null);
@@ -26,6 +27,8 @@ const Coordinates = () => {
     return (
         <div>
             <WeatherFetchCoord coordinates={coordinates} />
+            <Time coordinates={coordinates} />
+
         </div>
     );
 };

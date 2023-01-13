@@ -1,0 +1,35 @@
+body {
+    background-color: #f2f2f2;
+    display: flex; /* allows for easy positioning of elements */
+    flex-direction: column; /* aligns elements vertically */
+    justify-content: center; /* centers elements horizontally */
+    align-items: center; /* centers elements vertically */
+    min-height: 100vh; /* makes sure the entire page is filled */
+}
+
+.cityimg {
+    width: 50%;
+    height: auto;
+    object-fit: cover; /* ensures the entire image is visible and fills the space */
+    image-rendering: crisp-edges;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0;
+    color: #333; /* dark gray color */
+}
+
+.city, .description, .temperature, .humidity, .wind, .time, .feelslike {
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+    margin: 10px 0; /* adds margin to the top and bottom */
+}
+
+.search {
+    text-align: center;
+    margin-top: 50px;
+}

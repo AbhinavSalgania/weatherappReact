@@ -13,7 +13,7 @@ const WeatherFetcher = () => {
     };
 
     useEffect(() => {
-        getWeatherData('London');
+       
     }
     , []);
 
