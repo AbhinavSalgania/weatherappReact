@@ -1,12 +1,15 @@
 import React from 'react';
-import WeatherData from './components/WeatherData';
 import Coordinates from './components/Coordinates';
+import WeatherFetcher from './components/WeatherFetcher';
 
 const App = () => {
   return (
     <div>
-      <WeatherData />
+      <WeatherFetcher />
+
       <Coordinates />
+
+
     </div>
   );
 };
