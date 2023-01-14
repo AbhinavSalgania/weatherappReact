@@ -26,8 +26,9 @@ const Coordinates = () => {
 
     return (
         <div>
-            <WeatherFetchCoord coordinates={coordinates} />
             <Time coordinates={coordinates} />
+            <WeatherFetchCoord coordinates={coordinates} />
+            
 
         </div>
     );
