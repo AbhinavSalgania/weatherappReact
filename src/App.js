@@ -11,9 +11,11 @@ import './components/styles.css';
 const App = () => {
     const [city, setCity] = React.useState(null);
     const [coordinates, setCoordinates] = React.useState(null);
+    const [citySearched, setCitySearched] = React.useState(false);
 
     const handleSearch = (newCity) => {
         setCity(newCity);
+        setCitySearched(true);
     }
 
     const handleFetchSuccess = () => {
@@ -24,16 +26,20 @@ const App = () => {
         setCoordinates(newCoordinates);
 
     }
+
     return (
         <div>
           <CityWeatherFetcher city={city} onFetchSuccess={handleFetchSuccess} /> 
           <CityCoordinates city={city} onFetchSuccess={handleFetchCoordinates} />
           <CityTime coordinates={coordinates} onFetchSuccess={handleFetchSuccess} />
           <Image city={city} onFetchSuccess={handleFetchSuccess} />
+          
+          { !citySearched && <Coordinates /> }
+
           <CitySearch onSearch={handleSearch} />
-          <Coordinates /> 
         </div>
     );
 };
+
 
 export default App;

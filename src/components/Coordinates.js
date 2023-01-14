@@ -3,8 +3,7 @@ import WeatherFetchCoord from './WeatherFetchCoord';
 import Time from './Time';
 
 const Coordinates = () => {
-    const [coordinates, setCoordinates] = useState(null);
-    
+    const [coordinates, setCoordinates] = useState(null);    
     // use geolocation API to get coordinates
 
     const getCoordinates = async () => {
@@ -26,10 +25,8 @@ const Coordinates = () => {
 
     return (
         <div>
-            <Time coordinates={coordinates} />
-            <WeatherFetchCoord coordinates={coordinates} />
-            
-
+        <Time coordinates={coordinates} />
+        <WeatherFetchCoord coordinates={coordinates} />
         </div>
     );
 };

@@ -3,7 +3,7 @@ import React from 'react';
 const WeatherDisplay = (props) => {
     const weatherData = props.weatherData;
     if (!weatherData) {
-    return <p>Loading...</p>;
+    return <p></p>;
     }
 
     const {name, sys, main, weather, wind} = weatherData;
