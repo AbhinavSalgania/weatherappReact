@@ -32,4 +32,31 @@ h1 {
 .search {
     text-align: center;
     margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchBar {
+    padding: 10px; /* add padding to the search bar */
+    font-size: 1.5em; /* make the text inside the search bar medium-sized */
+    border-radius: 10px; /* round the edges of the search bar */
+    border: none; /* remove the border */
+    width: 50%; /* make the search bar take up half the width of the screen */
+}
+
+button[type="submit"] {
+    padding: 10px 20px; /* add padding to the button */
+    font-size: 1.5em; /* make the text inside the button medium-sized */
+    border-radius: 10px; /* round the edges of the button */
+    background-color: #3498db; /* change the button's background color */
+    color: white; /* change the text color inside the button */
+    border: none; /* remove the border */
+    margin-left: 10px; /* add space between the search bar and button */
+}
+
+.searchForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

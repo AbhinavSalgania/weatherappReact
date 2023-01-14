@@ -3,19 +3,24 @@ import WeatherDisplay from './WeatherDisplay';
 
 const WeatherApi = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
 
-const WeatherFetcher = () => {
+const CityWeatherFetcher = (props) => {
+    const {city, onFetchSuccess} = props;
     const [weatherData, setWeatherData] = useState(null);
+
+    useEffect(() => {
+        if(city) {
+            getWeatherData(city);
+        }
+    }, [city]);
 
     const getWeatherData = async (city) => {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${WeatherApi}&units=metric`);
         const data = await response.json();
         setWeatherData(data);
+        if(onFetchSuccess && typeof onFetchSuccess === 'function') {
+            onFetchSuccess();
+        }
     };
-
-    useEffect(() => {
-       
-    }
-    , []);
 
     return (
         <div>
@@ -25,4 +30,4 @@ const WeatherFetcher = () => {
 };
 
 
-export default WeatherFetcher;
+export default CityWeatherFetcher;

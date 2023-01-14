@@ -2,24 +2,27 @@ import React, { useState, useEffect } from 'react';
 
 const TimeApi = process.env.REACT_APP_TIMEZONE_API_KEY;
 
-// Time API needs coordinates to work
 
-const Time = (props) => {
-    const {coordinates} = props;
+// get coordinates fro CityCoordinates.js
+// and display time using dbtime API
+
+const CityTime = (props) => {
+    const {coordinates, onFetchSuccess} = props;
+    const [prevCoordinates, setPrevCoordinates] = useState(JSON.stringify(coordinates));
     const [timeData, setTimeData] = useState(null);
-    const [prevCoordinates, setPrevCoordinates] = useState(coordinates);
 
-useEffect(() => {
-        if (coordinates && coordinates !== prevCoordinates && coordinates.latitude && coordinates.longitude) {
-            setPrevCoordinates(coordinates);
-            getTimeData(coordinates.latitude, coordinates.longitude);
+    useEffect(() => {
+        if (coordinates && JSON.stringify(coordinates) !== prevCoordinates) {
+            setPrevCoordinates(JSON.stringify(coordinates));
+            getTimeData(coordinates);
         }
     }, [coordinates, prevCoordinates]);
     
 
-    const getTimeData = async (lat, lon) => {
+    const getTimeData = async ({lat, lon}) => {
         const timestamp = Date.now() / 1000;
         const response = await fetch(`https://maps.googleapis.com/maps/api/timezone/json?location=${lat},${lon}&timestamp=${timestamp}&key=${TimeApi}`);
+        console.log(response);
         const timeData = await response.json();
         const timeString = new Date().toLocaleString('en-US',{
             timeZone: timeData.timeZoneId,
@@ -27,6 +30,7 @@ useEffect(() => {
             minute: 'numeric',
             hour12: true
         });
+        console.log(timeString);
 
         setTimeData({formatted: timeString});
         
@@ -42,5 +46,7 @@ useEffect(() => {
     )
 };
 
-export default Time;
+
+export default CityTime;
+    
 

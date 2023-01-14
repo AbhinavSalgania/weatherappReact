@@ -1,18 +1,37 @@
 import React from 'react';
 import Coordinates from './components/Coordinates';
-import WeatherFetcher from './components/WeatherFetcher';
+import CityWeatherFetcher from './components/CityWeatherFetcher';
+import CitySearch from './components/CitySearch';
+import CityCoordinates from './components/CityCoordinates';
+import CityTime from './components/CityTime';
 import './components/styles.css';
 
+
 const App = () => {
-  return (
-    <div>
-      <WeatherFetcher />
+    const [city, setCity] = React.useState(null);
+    const [coordinates, setCoordinates] = React.useState(null);
 
-      <Coordinates />
+    const handleSearch = (newCity) => {
+        setCity(newCity);
+    }
 
+    const handleFetchSuccess = () => {
+        setCity(null);
+    }
 
-    </div>
-  );
+    const handleFetchCoordinates = (newCoordinates) => {
+        setCoordinates(newCoordinates);
+
+    }
+    return (
+        <div>
+          <CityWeatherFetcher city={city} onFetchSuccess={handleFetchSuccess} /> 
+          <CityCoordinates city={city} onFetchSuccess={handleFetchCoordinates} />
+          <CityTime coordinates={coordinates} onFetchSuccess={handleFetchSuccess} />
+          <CitySearch onSearch={handleSearch} />
+          <Coordinates /> 
+        </div>
+    );
 };
 
 export default App;
