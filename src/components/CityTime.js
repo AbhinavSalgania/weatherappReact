@@ -7,7 +7,7 @@ const TimeApi = process.env.REACT_APP_TIMEZONE_API_KEY;
 // and display time using dbtime API
 
 const CityTime = (props) => {
-    const {coordinates, onFetchSuccess} = props;
+    const {coordinates} = props;
     const [prevCoordinates, setPrevCoordinates] = useState(JSON.stringify(coordinates));
     const [timeData, setTimeData] = useState(null);
 
@@ -22,7 +22,6 @@ const CityTime = (props) => {
     const getTimeData = async ({lat, lon}) => {
         const timestamp = Date.now() / 1000;
         const response = await fetch(`https://maps.googleapis.com/maps/api/timezone/json?location=${lat},${lon}&timestamp=${timestamp}&key=${TimeApi}`);
-        console.log(response);
         const timeData = await response.json();
         const timeString = new Date().toLocaleString('en-US',{
             timeZone: timeData.timeZoneId,
@@ -30,11 +29,9 @@ const CityTime = (props) => {
             minute: 'numeric',
             hour12: true
         });
-        console.log(timeString);
 
         setTimeData({formatted: timeString});
         
-
     };
 
     // create a new element with classname time

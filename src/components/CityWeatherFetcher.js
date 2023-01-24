@@ -9,18 +9,17 @@ const CityWeatherFetcher = (props) => {
 
     useEffect(() => {
         if(city) {
+            const getWeatherData = async (city) => {
+                const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${WeatherApi}&units=metric`);
+                const data = await response.json();
+                setWeatherData(data);
+                if(onFetchSuccess && typeof onFetchSuccess === 'function') {
+                    onFetchSuccess();
+                }
+            };
             getWeatherData(city);
         }
-    }, [city]);
-
-    const getWeatherData = async (city) => {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${WeatherApi}&units=metric`);
-        const data = await response.json();
-        setWeatherData(data);
-        if(onFetchSuccess && typeof onFetchSuccess === 'function') {
-            onFetchSuccess();
-        }
-    };
+    }, [city, onFetchSuccess]);
 
     return (
         <div>
@@ -28,6 +27,5 @@ const CityWeatherFetcher = (props) => {
         </div>
     )
 };
-
 
 export default CityWeatherFetcher;

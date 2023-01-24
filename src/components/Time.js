@@ -30,7 +30,6 @@ useEffect(() => {
 
         setTimeData({formatted: timeString});
         
-
     };
 
     // create a new element with classname time
