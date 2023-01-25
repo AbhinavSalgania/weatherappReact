@@ -6,6 +6,7 @@ Features to add:
 * Dark mode
 * Ability for user to save cities
 
+***Api does not work in Safari browser***
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
