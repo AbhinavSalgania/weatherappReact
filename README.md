@@ -1,49 +1,40 @@
-# Open it here: <a href="https://weather-f6be5.web.app/">Weather App</a>
+# Weather App
 
-Features to add:
+A weather app built using React that fetches the current weather, time, and image of a location using openWeather API, Google TimeZone API, and Pexels API respectively.
+
+### Features
+
+* Uses the browser's geolocation API to get the user's location and fetch the weather, time and an image.
+* Has a search bar to allow the user to search for any location and fetch its weather, time and an image
+* Uses OpenWeather API, Google TimeZone API, and Pexels API
+* Displays the current weather and time of the location
+
+### How to use
+
+* Grant access to your location when prompted by your browser
+* The app will display the weather and time of your location
+* You can also search for a location using the search bar
+* For best results, search for a specific location by providing the city name and the country's name or initials (e.g. "New York, US" or "London, GB")
+
+### Getting started
+
+You can access the live version of the application here: <a href="https://weather-f6be5.web.app/">Weather App</a>
+
+### Additional features to be added
 
 * Sign in functionality using Firebase
 * Dark mode
 * Ability for user to save cities
+* Make the website responsive for different devices.
+   
+### Built With
 
-***Api does not work in Safari browser***
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- [React](https://reactjs.org/)
+- [OpenWeather API](https://openweathermap.org/api)
+- [Google TimeZone API](https://developers.google.com/maps/documentation/timezone/start)
+- [Pexels API](https://www.pexels.com/api)
+- [Firebase](https://firebase.google.com/)
 
+### Developers
 
-
-
-
-
-
-
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
+##### <a href="https://github.com/AbhinavSalgania">Abhinav Salgania</a>
