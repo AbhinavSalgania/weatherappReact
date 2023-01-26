@@ -27,6 +27,10 @@ You can access the live version of the application here: <a href="https://weathe
 * Ability for user to save cities
 * Make the website responsive for different devices.
    
+### Known bugs
+
+* Default location features do not work in Safari browser.
+
 ### Built With
 
 - [React](https://reactjs.org/)
@@ -37,4 +41,4 @@ You can access the live version of the application here: <a href="https://weathe
 
 ### Developers
 
-##### <a href="https://github.com/AbhinavSalgania">Abhinav Salgania</a>
+<a href="https://github.com/AbhinavSalgania">Abhinav Salgania</a>
