@@ -1,4 +1,4 @@
-# Open it here: <a href="https://weatherapp-34089.web.app/">Weather App</a>
+# Open it here: <a href="https://weather-f6be5.web.app/">Weather App</a>
 
 Features to add:
 
