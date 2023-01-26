@@ -1,6 +1,6 @@
 # Weather App
 
-A weather app built using React that fetches the current weather, time, and image of a location using openWeather API, Google TimeZone API, and Pexels API respectively.
+A weather app built using React that fetches the current weather, time, and image of a location using openWeather API, Google TimeZone API, and Pexels API respectively. It is being hosted using Firebase.
 
 ### Features
 
