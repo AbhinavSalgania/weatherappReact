@@ -23,10 +23,7 @@ You can access the live version of the application here: <a href="https://weathe
 ### Additional features to be added
 
 * Sign in functionality using Firebase
-* Dark mode
 * Ability for user to save cities
-* Make the website responsive for different devices
-* Improve UI
    
 ### Known bugs
 
